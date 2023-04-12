@@ -16,10 +16,10 @@
       <form method="post" th:action="@{/hospital/buscar}">
         <input th:value="${textoBuscado}" type="text" class="form-control col-10" placeholder="Buscar por nombre" name="textoBuscar"/>
         <button class="btn btn-success col-1" type="submit">Buscar</button>
-        <a class="btn btn-secondary col-1" th:href="@{/shipper}">Limpiar</a>
+        <a class="btn btn-secondary col-1" th:href="@{/hospital}">Limpiar</a>
       </form>
     </div>
-    <a class="btn btn-primary mt-4 mb-4" th:href="@{'/shipper/new'}">Nuevo Hospital</a>
+    <a class="btn btn-primary mt-4 mb-4" th:href="@{'/hospital/new'}">Nuevo Hospital</a>
     <table class="table table-sm">
       <tr>
         <th>#</th>
@@ -28,14 +28,14 @@
         <th></th>
         <th></th>
       </tr>
-      <tr th:each="hospital, info : ${shipperList}">
+      <tr th:each="hospital, info : ${hospitalList}">
         <td th:text="${info.index + 1}"></td>
         <td th:text="${hospital.nombre}"></td>
         <td th:text="${hospital.direccion}"></td>
         <td th:text="${hospital.telefono}"></td>
-        <td><a class="btn btn-primary" th:href="@{'/hospital/edit' + '?id=' + ${hospital.hospitalId}}">Editar</a>
+        <td><a class="btn btn-primary" th:href="@{'/doctor/list' + '?id=' + ${doctor.doctorId}}">Listar Doctores</a>
         </td>
-        <td><a class="btn btn-danger" th:href="@{'/hospital/delete' + '?id=' + ${hospital.hospitalId}}">Borrar</a>
+        <td><a class="btn btn-danger" th:href="@{'/paciente/list' + '?id=' + ${paciente.pacienteId}}">Listar Pacientes</a>
         </td>
       </tr>
     </table>
